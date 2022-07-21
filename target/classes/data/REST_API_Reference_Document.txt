@@ -1,0 +1,71 @@
+REST API Documentations:
+
+given: all input details(baseURI,Headers,Payload/Body,QueryParameters,Authorization)
+when:  submit api requests(Http method,Endpoint/Resource)
+then:  validate response(status code, Headers, responseTime, Payload/Body)
+
+01. ReadAllProducts
+HTTP Method: GET
+EndpointUrl: https://techfios.com/api-prod/api/product/read.php
+Authorization:
+Basic Auth/ Bearer Token
+Header:
+"Content-Type" : "application/json; charset=UTF-8"
+Status Code: 200
+
+02.ReadOneProduct
+HTTP Method: GET
+EndpointUrl: https://techfios.com/api-prod/api/product/read_one.php
+Authorization:
+Basic Auth/ Bearer Token
+Header:
+"Content-Type" : "application/json"
+QueryParam: 
+"id":"value"
+Status Code: 200
+
+03.CreateOneProduct
+HTTP Method: POST
+EndpointUrl: https://techfios.com/api-prod/api/product/create.php
+Authorization:
+Basic Auth/ Bearer Token
+Header:
+"Content-Type" : "application/json; charset=UTF-8"
+Status Code: 201
+Payload/Body: 
+{
+    "name": "Amazing Pillow 2.0 By MD",
+    "price": "199",
+    "description": "The best pillow for amazing programmers.",
+    "category_id": 2
+}  
+ 
+04.UpdateOneProduct
+HTTP Method: PUT
+EndpointUrl: https://techfios.com/api-prod/api/product/update.php
+Authorization:
+Basic Auth/ Bearer Token
+Header:
+"Content-Type" : "application/json; charset=UTF-8"
+Status Code: 200
+Payload/Body: 
+{
+    "id": "4562",
+    "name": "Amazing Pillow 3.0 By MD",
+    "price": "299",
+    "description": "The updated pillow for amazing programmers.",
+    "category_id": 2
+} 
+ 
+05. DeleteOneProduct
+HTTP Method: DELETE
+EndpointUrl: https://techfios.com/api-prod/api/product/delete.php
+Authorization:
+Basic Auth/ Bearer Token
+Header:
+"Content-Type" : "application/json; charset=UTF-8"
+Status Code: 200
+Payload/Body: 
+{
+    "id": "4562"   
+}
